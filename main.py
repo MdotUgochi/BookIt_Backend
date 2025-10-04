@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from api.routers import auth, users, services, bookings, review
 
 app = FastAPI(

@@ -1,4 +1,4 @@
-Perfect 👍 Thanks for clarifying. I’ll rewrite the **README for BookIt API** in that *exact same format* (Features → Technologies Used → API Endpoints in a table).
+
 
 ---
 
@@ -113,8 +113,8 @@ pip install -r requirements.txt
 DATABASE_URL=postgresql://postgres:1234@localhost:5432/bookit_db
 JWT_SECRET=supersecretkey
 JWT_ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-REFRESH_TOKEN_EXPIRE_DAYS=7
+ACCESS_TOKEN_EXPIRE_MINUTES=int
+REFRESH_TOKEN_EXPIRE_DAYS=int
 
 5. Run database migrations
 alembic upgrade head
@@ -122,3 +122,27 @@ alembic upgrade head
 
 7. Start the application
 uvicorn main:app --reload
+
+User for Test
+{
+  "name": "mercy2",
+  "email": "mercy2@example.com",
+  "password": "1234go",
+  "role": "user"
+}
+
+
+Admin for UserTesting
+{
+  "name": "mercy3",
+  "email": "mercy3@example.com",
+  "password": "1234go",
+  "role": "admin"
+}
+
+##For Authorization
+-> Once you login succesfully
+-> Copy the access_token value (just the token string).
+-> click the Authorize button in Swagger UI.
+-> in the Value field, paste it in with the Bearer prefix: e.g Bearer eyJhbGciOiJIUzI1NiIsInR...
+In Swagger, click Authorize 
